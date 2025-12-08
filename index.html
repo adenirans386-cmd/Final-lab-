@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GIS Journey - Fall 2024</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .intro-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .intro-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+        }
+
+        .map-showcase {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .map-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .map-showcase h3 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: #999;
+            padding: 20px;
+        }
+
+        .map-placeholder p {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .story-section {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .story-section h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .story-section p {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .tools-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tool-badge {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .problem-type {
+            background: #764ba2;
+            color: white;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .intro-section, .map-showcase {
+                padding: 25px;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="fade-in">
+            <h1>My GIS Journey</h1>
+            <p>15 Weeks of Spatial Analysis & Storytelling</p>
+        </header>
+
+        <div class="intro-section fade-in">
+            <h2>What I Accomplished This Semester</h2>
+            <p>Over the past 15 weeks, I've transformed from a GIS novice into a confident spatial analyst capable of solving real-world problems through geographic information systems. This portfolio showcases my three best projects that demonstrate my ability to collect, analyze, and visualize spatial data to tell compelling stories and solve complex problems.</p>
+            
+            <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Skills Mastered</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">Spatial Analysis</div>
+                <div class="skill-tag">Data Visualization</div>
+                <div class="skill-tag">Cartographic Design</div>
+                <div class="skill-tag">Buffer Analysis</div>
+                <div class="skill-tag">Overlay Operations</div>
+                <div class="skill-tag">Geocoding</div>
+                <div class="skill-tag">Network Analysis</div>
+                <div class="skill-tag">Raster Analysis</div>
+                <div class="skill-tag">Database Management</div>
+                <div class="skill-tag">Visual Hierarchy</div>
+            </div>
+        </div>
+
+        <!-- MAP 1 -->
+        <div class="map-showcase fade-in">
+            <div class="map-number">1</div>
+            <h3>San Francisco Population Density Analysis</h3>
+            <div class="problem-type">Problem Type: Demographic Analysis & Spatial Distribution</div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                        <rect x="10" y="10" width="80" height="80" stroke="#667eea" stroke-width="3" fill="none" rx="5"/>
+                        <path d="M30 50 L50 30 L70 50 L50 70 Z" fill="#667eea" opacity="0.3"/>
+                        <circle cx="50" cy="50" r="15" stroke="#764ba2" stroke-width="2" fill="none"/>
+                    </svg>
+                    <p>Insert your SF Population Density map here</p>
+                    <p style="font-size: 0.9em; color: #bbb;">(Image 1: The choropleth map showing population density by census tract)</p>
+                </div>
+            </div>
+
+            <div class="story-section">
+                <h4>The Story</h4>
+                <p>This map reveals the stark contrasts in how San Francisco's population is distributed across its neighborhoods. Using census tract data, I calculated population density to identify the most densely populated areas of the city. The analysis shows that certain neighborhoods have population densities exceeding 170,000 people per square mile, while others remain relatively sparse. This type of analysis is critical for urban planners making decisions about public transit routes, emergency service placement, and infrastructure investment. The graduated color scheme makes it immediately clear where the city's population pressure points are concentrated, particularly in the northeastern and central portions of San Francisco.</p>
+            </div>
+
+            <div class="story-section">
+                <h4>GIS Tools & Skills Used</h4>
+                <div class="tools-used">
+                    <span class="tool-badge">Field Calculator (Density Calculation)</span>
+                    <span class="tool-badge">Census Tract Analysis</span>
+                    <span class="tool-badge">Choropleth Mapping</span>
+                    <span class="tool-badge">Data Normalization</span>
+                    <span class="tool-badge">Graduated Color Symbology</span>
+                    <span class="tool-badge">Attribute Table Manipulation</span>
+                    <span class="tool-badge">Spatial Join Operations</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAP 2 -->
+        <div class="map-showcase fade-in">
+            <div class="map-number">2</div>
+            <h3>Philadelphia Gun Violence & Health Access Analysis</h3>
+            <div class="problem-type">Problem Type: Spatial Join & Multi-layer Overlay Analysis</div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                        <rect x="10" y="10" width="80" height="80" stroke="#667eea" stroke-width="3" fill="none" rx="5"/>
+                        <path d="M20 60 Q30 40, 40 55 T60 50 T80 60" stroke="#764ba2" stroke-width="3" fill="none"/>
+                        <circle cx="35" cy="55" r="5" fill="#667eea"/>
+                        <circle cx="65" cy="45" r="5" fill="#667eea"/>
+                    </svg>
+                    <p>Insert your Philadelphia analysis map here</p>
+                    <p style="font-size: 0.9em; color: #bbb;">(Image 2: The map showing gun violence locations and healthy corner stores)</p>
+                </div>
+            </div>
+
+            <div class="story-section">
+                <h4>The Story</h4>
+                <p>This map examines the intersection of public safety and health access in Philadelphia by overlaying gun violence incidents with the locations of healthy corner stores and transit routes. The spatial join analysis reveals patterns between neighborhoods experiencing gun violence and their access to health resources. The bright magenta area represents the combined spatial extent where these factors intersect, showing how communities facing violence may also lack convenient access to healthy food options. This type of analysis helps public health officials and community organizations understand how multiple social determinants of health overlap geographically, enabling more targeted intervention strategies in Philadelphia's most vulnerable neighborhoods.</p>
+            </div>
+
+            <div class="story-section">
+                <h4>GIS Tools & Skills Used</h4>
+                <div class="tools-used">
+                    <span class="tool-badge">Spatial Join Analysis</span>
+                    <span class="tool-badge">Multi-layer Overlay</span>
+                    <span class="tool-badge">Point Data Mapping</span>
+                    <span class="tool-badge">Polygon Dissolve Operations</span>
+                    <span class="tool-badge">Network Data Integration (SEPTA)</span>
+                    <span class="tool-badge">Map Layout & Legend Design</span>
+                    <span class="tool-badge">Scale Bar & North Arrow</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAP 3 -->
+        <div class="map-showcase fade-in">
+            <div class="map-number">3</div>
+            <h3>Philadelphia School Facilities & Street Network Analysis</h3>
+            <div class="problem-type">Problem Type: Point Pattern Analysis & Network Accessibility</div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                        <rect x="10" y="10" width="80" height="80" stroke="#667eea" stroke-width="3" fill="none" rx="5"/>
+                        <line x1="30" y1="30" x2="70" y2="30" stroke="#764ba2" stroke-width="2"/>
+                        <line x1="30" y1="50" x2="70" y2="50" stroke="#764ba2" stroke-width="2"/>
+                        <line x1="30" y1="70" x2="70" y2="70" stroke="#764ba2" stroke-width="2"/>
+                        <circle cx="30" cy="30" r="4" fill="#667eea"/>
+                        <circle cx="50" cy="50" r="4" fill="#667eea"/>
+                        <circle cx="70" cy="70" r="4" fill="#667eea"/>
+                    </svg>
+                    <p>Insert your Philadelphia schools map here</p>
+                    <p style="font-size: 0.9em; color: #bbb;">(Image 3: The map showing school facilities with enrollment data)</p>
+                </div>
+            </div>
+
+            <div class="story-section">
+                <h4>The Story</h4>
+                <p>This map visualizes the distribution of Philadelphia's diverse educational facilities across the city's street network. By mapping 550+ schools categorized by type (District, Charter, Private, Archdiocese) with enrollment data, I created a comprehensive view of educational access throughout Philadelphia. The color-coded points reveal clustering patterns of different school types, with cyan representing one category and dark red/brown representing another. This spatial analysis helps parents, policymakers, and urban planners understand where educational resources are concentrated and where gaps exist. The integration of street centerlines provides context for accessibility, while the enrollment attribute enables deeper analysis of capacity distribution across Philadelphia's neighborhoods.</p>
+            </div>
+
+            <div class="story-section">
+                <h4>GIS Tools & Skills Used</h4>
+                <div class="tools-used">
+                    <span class="tool-badge">Point Feature Analysis</span>
+                    <span class="tool-badge">Categorical Symbolization</span>
+                    <span class="tool-badge">Network Visualization (Streets)</span>
+                    <span class="tool-badge">Attribute-based Classification</span>
+                    <span class="tool-badge">Selection & Filtering (212 of 550)</span>
+                    <span class="tool-badge">Multi-category Data Display</span>
+                    <span class="tool-badge">Data Table Management</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p style="margin-bottom: 20px;">Connect with me to discuss GIS projects and opportunities</p>
+            <div>
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+                <a href="https://github.com/yourprofile">GitHub</a>
+            </div>
+            <p style="margin-top: 30px; opacity: 0.8; font-size: 0.9em;">© 2024 - Created as part of GIS coursework</p>
+        </footer>
+    </div>
+</body>
+</html>
