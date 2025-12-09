@@ -115,20 +115,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 3px dashed #ccc;
-            position: relative;
             overflow: hidden;
         }
 
-        .map-placeholder {
-            text-align: center;
-            color: #999;
-            padding: 20px;
-        }
-
-        .map-placeholder p {
-            font-size: 1.1em;
-            margin-top: 10px;
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .story-section {
@@ -255,18 +248,11 @@
         <!-- MAP 1 -->
         <div class="map-showcase fade-in">
             <div class="map-number">1</div>
+            <h3>San Francisco Population Density Analysis</h3>
             <div class="problem-type">Problem Type: Demographic Analysis & Spatial Distribution</div>
-            <img src="sf-population-density.jpg" alt="San Francisco Population Density by Census Tract" style="width:100%; height:100%; object-fit:contain;">
-
+            
             <div class="map-container">
-                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-                        <rect x="10" y="10" width="80" height="80" stroke="#667eea" stroke-width="3" fill="none" rx="5"/>
-                        <path d="M30 50 L50 30 L70 50 L50 70 Z" fill="#667eea" opacity="0.3"/>
-                        <circle cx="50" cy="50" r="15" stroke="#764ba2" stroke-width="2" fill="none"/>
-                    </svg>
-                    <p>sf-population-density.jpg</p>
-                    <p style="font-size: 0.9em; color: #bbb;">(Image 1: The choropleth map showing population density by census tract)</p>
-                </div>
+                <img src="sf-population-density.jpg" alt="San Francisco Population Density by Census Tract">
             </div>
 
             <div class="story-section">
@@ -291,20 +277,11 @@
         <!-- MAP 2 -->
         <div class="map-showcase fade-in">
             <div class="map-number">2</div>
-          <img src="Screenshot 2025-12-08 at 09-41-06 Layout.pdf.png <h3>Philadelphia Gun Violence & Health Access Analysis</h3>
+            <h3>Philadelphia Gun Violence & Health Access Analysis</h3>
             <div class="problem-type">Problem Type: Spatial Join & Multi-layer Overlay Analysis</div>
             
             <div class="map-container">
-                <div class="map-placeholder">
-                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-                        <rect x="10" y="10" width="80" height="80" stroke="#667eea" stroke-width="3" fill="none" rx="5"/>
-                        <path d="M20 60 Q30 40, 40 55 T60 50 T80 60" stroke="#764ba2" stroke-width="3" fill="none"/>
-                        <circle cx="35" cy="55" r="5" fill="#667eea"/>
-                        <circle cx="65" cy="45" r="5" fill="#667eea"/>
-                    </svg>
-                    <p>Insert your Philadelphia analysis map here</p>
-                    <p style="font-size: 0.9em; color: #bbb;">(Image 2: The map showing gun violence locations and healthy corner stores)</p>
-                </div>
+                <img src="philly-gun-violence.jpg" alt="Philadelphia Gun Violence and Health Access Analysis">
             </div>
 
             <div class="story-section">
@@ -329,40 +306,28 @@
         <!-- MAP 3 -->
         <div class="map-showcase fade-in">
             <div class="map-number">3</div>
-          <img src=" Screenshot 2025-12-08 at 09-36-17 Layout.pdf.png <h3>Philadelphia School Facilities & Street Network Analysis</h3>
-            <div class="problem-type">Problem Type: Point Pattern Analysis & Network Accessibility</div>
+            <h3>Philadelphia Regional Census Block Analysis</h3>
+            <div class="problem-type">Problem Type: Multi-criteria Spatial Analysis & Regional Planning</div>
             
             <div class="map-container">
-                <div class="map-placeholder">
-                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-                        <rect x="10" y="10" width="80" height="80" stroke="#667eea" stroke-width="3" fill="none" rx="5"/>
-                        <line x1="30" y1="30" x2="70" y2="30" stroke="#764ba2" stroke-width="2"/>
-                        <line x1="30" y1="50" x2="70" y2="50" stroke="#764ba2" stroke-width="2"/>
-                        <line x1="30" y1="70" x2="70" y2="70" stroke="#764ba2" stroke-width="2"/>
-                        <circle cx="30" cy="30" r="4" fill="#667eea"/>
-                        <circle cx="50" cy="50" r="4" fill="#667eea"/>
-                        <circle cx="70" cy="70" r="4" fill="#667eea"/>
-                    </svg>
-                    <p>Insert your Philadelphia schools map here</p>
-                    <p style="font-size: 0.9em; color: #bbb;">(Image 3: The map showing school facilities with enrollment data)</p>
-                </div>
+                <img src="philly-census-blocks.jpg" alt="Philadelphia Regional Census Block Analysis">
             </div>
 
             <div class="story-section">
                 <h4>The Story</h4>
-                <p>This map visualizes the distribution of Philadelphia's diverse educational facilities across the city's street network. By mapping 550+ schools categorized by type (District, Charter, Private, Archdiocese) with enrollment data, I created a comprehensive view of educational access throughout Philadelphia. The color-coded points reveal clustering patterns of different school types, with cyan representing one category and dark red/brown representing another. This spatial analysis helps parents, policymakers, and urban planners understand where educational resources are concentrated and where gaps exist. The integration of street centerlines provides context for accessibility, while the enrollment attribute enables deeper analysis of capacity distribution across Philadelphia's neighborhoods.</p>
+                <p>This map presents a comprehensive regional view of Philadelphia and its surrounding counties using census block-level data. The vibrant color classification system (ranging from yellow to red to orange) reveals distinct spatial patterns across the metropolitan area. Unlike broader census tract analysis, census blocks provide the finest level of geographic detail available from the Census Bureau, enabling precise identification of demographic or land use characteristics. The analysis encompasses Philadelphia proper as well as neighboring jurisdictions including Pennsauken, Gloucester City, and surrounding communities in New Jersey. This type of fine-grained spatial analysis is essential for targeted policy interventions, resource allocation decisions, and understanding hyperlocal variations that might be masked by larger geographic units.</p>
             </div>
 
             <div class="story-section">
                 <h4>GIS Tools & Skills Used</h4>
                 <div class="tools-used">
-                    <span class="tool-badge">Point Feature Analysis</span>
-                    <span class="tool-badge">Categorical Symbolization</span>
-                    <span class="tool-badge">Network Visualization (Streets)</span>
-                    <span class="tool-badge">Attribute-based Classification</span>
-                    <span class="tool-badge">Selection & Filtering (212 of 550)</span>
-                    <span class="tool-badge">Multi-category Data Display</span>
-                    <span class="tool-badge">Data Table Management</span>
+                    <span class="tool-badge">Census Block Geography</span>
+                    <span class="tool-badge">Multi-class Classification</span>
+                    <span class="tool-badge">Regional Analysis (Multi-county)</span>
+                    <span class="tool-badge">Graduated Color Symbology</span>
+                    <span class="tool-badge">OBJECTID Field Management</span>
+                    <span class="tool-badge">Cartographic Design</span>
+                    <span class="tool-badge">Legend & Map Elements</span>
                 </div>
             </div>
         </div>
@@ -370,9 +335,9 @@
         <footer>
             <p style="margin-bottom: 20px;">Connect with me to discuss GIS projects and opportunities</p>
             <div>
-                <a href="mailto:your.email@example.com">Adenirans386@gmail.com</a>
-                <a href="https://linkedin.com/in/yourprofile">4846440456</a>
-                <a href="https://github.com/yourprofile">GitHub</a>
+                <a href="mailto:Adenirans386@gmail.com">Adenirans386@gmail.com</a>
+                <a href="tel:4846440456">484-644-0456</a>
+                <a href="https://github.com/adenirans386-cmd">GitHub</a>
             </div>
             <p style="margin-top: 30px; opacity: 0.8; font-size: 0.9em;">© 2024 - Created as part of GIS coursework</p>
         </footer>
